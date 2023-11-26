@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <script src="{{ url_for('static', filename='fetch-repositories.js') }}"></script>
+    <h1>GitHub Repositories</h1>
+
+   <div id="input-form-container" style="margin-bottom: 20px;">
+    {{ inputFormTemplate|safe }}
+   </div>
+
+   <div id="is-new-user">
+   </div>
+
+   <div id="repository-list-container">
+    {{ repositoryListTemplate|safe }}
+   </div>
+</body>
+</html>

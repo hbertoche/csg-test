@@ -1,0 +1,110 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+}
+
+#username {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#username::placeholder {
+    color: #999;
+}
+
+#getRepositoriesBtn {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#getRepositoriesBtn:hover {
+    background-color: #45a049;
+}
+
+.repo-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.extra-info {
+    display: none;
+    flex-wrap: wrap;
+    color: #555;
+}
+
+.repo-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px;
+    width: 80%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repo-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+}
+
+.repo-language,
+.repo-description {
+    margin-bottom: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.repo-name a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.repo-name a:hover {
+    text-decoration: underline;
+}
+
+.repo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#is-new-user {
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#is-new-user.created-user {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#is-new-user.updated-user {
+    background-color: #007BFF;
+    color: white;
+}
