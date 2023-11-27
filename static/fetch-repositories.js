@@ -13,16 +13,19 @@ function fetchRepositories() {
             console.log(data);
             const repositoriesList = document.getElementById('repositories-list');
             repositoriesList.innerHTML = '';
-            data.data.forEach(repo => {
+            data.data.forEach(repository => {
                 repositoriesList.innerHTML += `<div class="repo-item">
-                <h3 class="repo-name" onclick="toggleExtraInfo('${repo.name}')">${repo.name}</h3>
-                <div id="${repo.name}" style="display:none">
-                    <p><a href="${repo.html_url}" target="_blank">${repo.html_url}</a></p>
-                    <p class="repo-language">Language: ${repo.language}</p>
-                    <p class="repo-description">Description: ${repo.description}</p>
+                <h3 class="repo-name" onclick="toggleExtraInfo('${repository.name}')">${repository.name}</h3>
+                <div id="${repository.name}" style="display:none">
+                    <p><a href="${repository.html_url}" target="_blank">${repository.html_url}</a></p>
+                    <p class="repo-language">Language: ${repository.language}</p>
+                    <p class="repo-description">Description: ${repository.description}</p>
                 </div>
             </div>`;
             });
+            if (data.data.length === 0) {
+                populateIsNewUserDiv('', '')
+            }
             if (data.isNewUser) {
                 populateIsNewUserDiv(username, 'created');
             } else {
@@ -37,8 +40,13 @@ function fetchRepositories() {
 
 function populateIsNewUserDiv(username, action) {
     const isNewUserDiv = document.getElementById("is-new-user");
-    isNewUserDiv.innerHTML = `<p> ${username} is being ${action}`;
-    isNewUserDiv.className = `${action}-user`
+    if (username === '' && action === '') {
+        isNewUserDiv.innerHTML = `<p> ${username} owns no repositories</p>`;
+        isNewUserDiv.className = 'empty-user';
+    } else {
+        isNewUserDiv.innerHTML = `<p> ${username} is being ${action}</p>`;
+        isNewUserDiv.className = `${action}-user`
+    }
 }
 
 function toggleExtraInfo(divId) {

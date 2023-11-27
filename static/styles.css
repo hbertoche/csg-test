@@ -108,3 +108,8 @@ label {
     background-color: #007BFF;
     color: white;
 }
+
+#is-new-user.empty-user {
+    background-color: #CC5733;
+    color: white;
+}
