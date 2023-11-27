@@ -24,12 +24,13 @@ function fetchRepositories() {
             </div>`;
             });
             if (data.data.length === 0) {
-                populateIsNewUserDiv('', '')
-            }
-            if (data.isNewUser) {
-                populateIsNewUserDiv(username, 'created');
+                populateIsNewUserDiv(username, '')
             } else {
-                populateIsNewUserDiv(username, 'updated');
+                if (data.isNewUser) {
+                    populateIsNewUserDiv(username, 'created');
+                } else {
+                    populateIsNewUserDiv(username, 'updated');
+                }
             }
         })
         .catch(error => {
@@ -40,7 +41,7 @@ function fetchRepositories() {
 
 function populateIsNewUserDiv(username, action) {
     const isNewUserDiv = document.getElementById("is-new-user");
-    if (username === '' && action === '') {
+    if (action === '') {
         isNewUserDiv.innerHTML = `<p> ${username} owns no repositories</p>`;
         isNewUserDiv.className = 'empty-user';
     } else {
