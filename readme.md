@@ -8,7 +8,7 @@
 - Flask
 - Redis
 
-## main.pya
+## main.py
 
 This file is responsible for:
 - Starting the flask server
