@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# GitHub User Repositories Frontend
+
+>This is a modular React (Next.js) frontend for the CSG Engineer Interview Project. It allows users to enter a GitHub username, fetches and displays the user's repositories, and shows whether the user was created or updated in the backend storage.
+
+## Features
+
+- Clean, component-based architecture (`components/` directory)
+- Form to input GitHub username
+- Fetches and displays repository data (name, url, description, language)
+- Shows status messages for user creation/update/errors
+- Uses a backend Python/Flask service for all data operations
+
+## ⚠️ Important: Backend Required
+
+This frontend **requires the backend service** (Python/Flask, port 5000 by default) to be running for full functionality. See the main project or backend README for setup instructions.
+
+The backend URL is configured via `.env.local`:
+
+```
+NEXT_PUBLIC_BACKEND_URL=http://localhost:5000
+```
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `components/` — UI components (`UsernameForm`, `RepoList`, `StatusMessage`)
+- `lib/api.ts` — API utility for backend requests
+- `app/page.tsx` — Main page, composes components and manages state
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+- You can further style or extend the UI as needed.
+- To change the backend URL, edit `.env.local`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more details, see the main project instructions or contact the project maintainer.
