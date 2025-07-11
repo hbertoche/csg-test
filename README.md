@@ -1,6 +1,11 @@
-# Software Engineer Interview Project
+# CSG Engineer Interview Project
 
-This project is designed to demonstrate the development of a web application that retrieves and displays GitHub user repository information. It consists of a Python backend and a React.js frontend.
+This is a full-stack project that consists of:
+
+- A **Python (Flask)** backend for fetching, storing, and serving GitHub user repository data.
+- A **React (Next.js)** frontend that allows users to input a GitHub username and view the associated repositories.
+
+---
 
 ## Project Structure
 
@@ -13,13 +18,16 @@ The backend is built using Python and includes the following components:
 - **app/**: Contains the main application logic.
   - **`__init__.py`**: Initializes the backend application package.
   - **`main.py`**: Entry point of the backend application, setting up the web server.
-  - **`models.py`**: Defines data models for storing GitHub user repository data.
-  - **`routes.py`**: Defines routes for handling incoming requests.
-  - **`storage.py`**: Manages the storage of repository data.
+  - **`models`**: Folder with defined data models for the project.
+  - **`controller`**: Folder with defined routes for handling incoming requests.
+  - **`repositories`**: Folder with responsible to manage the storage of user data.
+  - **`services`**: Folder with the main application logic with the code to do the requests.
   
 - **`requirements.txt`**: Lists the dependencies required for the backend application.
 
 - **`README.md`**: Documentation specific to the backend application, including setup instructions and usage details.
+
+- **WIP**: Ongoing unit tests in the branch unit-tests
 
 ### Frontend
 
@@ -29,12 +37,12 @@ The frontend is built using React.js and includes the following components:
   - **`index.html`**: Main HTML file for the frontend application.
 
 - **src/**: Contains the source code for the React application.
-  - **`App.js`**: Main React component managing the overall structure and state.
-  - **`index.js`**: Entry point for the React application, rendering the main App component.
+  - **`page.tsx`**: Main React component managing the overall structure and state.
   - **components/**: Contains React components.
-    - **`UserForm.js`**: Component for user input form.
-    - **`RepoList.js`**: Component for displaying the list of repositories.
-  - **services/**: Contains API service functions.
+    - **`UserForm.tsx`**: Component for user input form.
+    - **`RepoList.tsx`**: Component for displaying the list of repositories.
+    - **`StatusMessage.tsx`**: Component to display whether the request was successful or not.
+  - **lib/**: Contains API service functions.
     - **`api.js`**: Functions for making API calls to the backend.
 
 - **`package.json`**: Configuration file for npm, listing dependencies and scripts.
@@ -46,14 +54,6 @@ The frontend is built using React.js and includes the following components:
 To get started with the project, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Navigate to the `backend` directory and install the required dependencies listed in `requirements.txt`.
-3. Navigate to the `frontend` directory and install the required npm packages listed in `package.json`.
+2. Navigate to the `backend` directory and install the required dependencies listed in `requirements.txt` and follow the `README.md` there for better instructions.
+3. Navigate to the `frontend` directory and install the required npm packages listed in `package.json` and follow the `README.md` there for better instructions
 4. Start the backend server and the frontend application.
-
-## Contributing
-
-Contributions to this project are welcome. Please feel free to submit a pull request or open an issue for any suggestions or improvements.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
