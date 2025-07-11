@@ -63,3 +63,11 @@ python -m app.main
 - Ensure MySQL is running and credentials are correct in `.env`.
 - If you see import errors, make sure you are running from the `backend/app` directory or adjust your `PYTHONPATH`.
 - For any issues, check the logs printed in your terminal.
+
+## 8. Unit tests
+
+- To run unit tests, run: `python -m unittest discover`
+
+## WIP
+
+- Creating unit tests/integration tests for better maintainability
