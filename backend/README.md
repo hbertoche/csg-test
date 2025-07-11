@@ -66,7 +66,7 @@ python -m app.main
 
 ## 8. Unit tests
 
-- To run unit tests, run: `python -m unittest discover`
+- To run unit tests, on the `backend` directory run: `python -m unittest discover -s tests`
 
 ## WIP
 
